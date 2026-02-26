@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>媒资数据库 Copilot 设计迭代 | Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f97316', // Vibrant Orange
+                        secondary: '#3b82f6', // Bright Blue
+                        accent: '#22d3ee', // Cyan
+                        dark: '#0f172a', // Slate 900
+                        darker: '#020617', // Slate 950
+                        glass: 'rgba(15, 23, 42, 0.7)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        hand: ['Patrick Hand', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-darker selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center gap-2 text-white hover:text-primary transition-colors">
+                    <i class="fas fa-arrow-left"></i>
+                    <span class="font-bold">返回首页</span>
+                </a>
+                <span class="text-gray-400 text-sm font-mono">Project Details</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Header Section -->
+            <div class="mb-12">
+                <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                        <i class="fas fa-tag mr-1"></i> 腾讯实习
+                    </span>
+                    <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                        <i class="fas fa-robot mr-1"></i> Copilot / LGUI
+                    </span>
+                    <span class="text-gray-400">
+                        <i class="far fa-calendar-alt mr-1"></i> 2025.06 - 2025.09
+                    </span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    媒资数据库 Copilot 设计迭代
+                </h1>
+                <p class="text-xl text-gray-400 leading-relaxed border-l-4 border-primary pl-6">
+                    升级为页面级智能助手 v2.0，引入右侧悬浮气泡、Hover 调用，降低使用门槛，提升工作流融合度。
+                </p>
+            </div>
+
+            <!-- Main Image Placeholder -->
+            <div class="w-full h-auto bg-slate-800 rounded-2xl border border-white/5 mb-12 relative overflow-hidden group">
+                <img src="./Copilotcover.png" class="w-full h-auto object-contain" alt="Project Cover">
+            </div>
+
+            <!-- Content Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <!-- Left Column: Details -->
+                <div class="md:col-span-2 space-y-12">
+                    
+                    <!-- Section: Background -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fas fa-info-circle text-primary"></i> 项目背景
+                        </h2>
+                        <div class="text-gray-300 leading-relaxed space-y-4">
+                            <p>调研发现用户对数据库操作路径高度固化，纯对话式 Agent 使用门槛高；同时 Agent 异步任务耗时较长，需要优化人机交互以保证使用心流，目标提升 Agent 的易用性与工作流融合度。</p>
+                        </div>
+                    </section>
+
+                    <!-- Section: Problem Breakdown -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fas fa-exclamation-triangle text-red-400"></i> 问题拆解
+                        </h2>
+                        <div class="text-gray-300 leading-relaxed space-y-4">
+                            <p>通过用户调研发现，影响非技术用户使用的核心痛点如下：</p>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-300">
+                                <li><strong>Prompt 输入理解成本高：</strong> 一句话说不清楚需求，AI多轮追问澄清意图。</li>
+                                <li><strong>Agent 与页面上下文割裂失焦：</strong> “这段对话在聊哪个素材来着？忘了，复制素材 id 回去搜搜。”</li>
+                                <li><strong>长耗时任务管理不标：</strong> “素材生产完了吗？手动刷新问一问。”</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Section: Interaction Upgrade -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fas fa-magic text-secondary"></i> 交互升级
+                        </h2>
+                        <div class="text-gray-300 leading-relaxed space-y-4">
+                            <p>引入右侧悬浮气泡、页面内一键触发、表格 Hover 调用，将数据库管理对话 Copilot 升级为页面级智能助手 v2.0。</p>
+                            
+                            <!-- Analysis Image Placeholder -->
+                            <div class="mt-6 w-full h-auto bg-slate-800 rounded-lg border border-white/5 overflow-hidden group hover:border-secondary/50 transition-colors">
+                                <img src="./Copilotcover.png" class="w-full h-auto object-contain transform group-hover:scale-[1.02] transition-transform duration-500" alt="交互流程对比">
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Results -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fas fa-chart-line text-accent"></i> 项目成果
+                        </h2>
+                        <div class="glass-card p-6 rounded-xl border-l-4 border-green-500 mb-6">
+                            <h3 class="font-bold text-white mb-2">从纯文本对话到 LGUI Agent</h3>
+                            <p class="text-gray-300 text-sm">显著降低用户使用门槛与 Prompt 依赖，Agent 深度融入媒资管理流程，成为可持续使用的生产力工具。</p>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Right Column: Meta Info -->
+                <div class="space-y-8">
+                    <div class="glass-card p-6 rounded-xl sticky top-24">
+                        <h3 class="text-lg font-bold text-white mb-4 border-b border-white/10 pb-2">关键信息</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Role</span>
+                                <span class="text-white font-medium">产品实习生</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Focus</span>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">交互设计</span>
+                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">用户体验</span>
+                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">Agent</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-600 text-sm border-t border-white/5 mt-12">
+        <p>&copy; 2026 Yao Xiaoyu. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

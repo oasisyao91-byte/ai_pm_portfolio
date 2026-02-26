@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/project-baidu-agent", "destination": "/project-baidu-agent.html" },
+    { "source": "/project-baidu-rule", "destination": "/project-baidu-rule.html" },
+    { "source": "/project-baidu-trace", "destination": "/project-baidu-trace.html" },
+    { "source": "/project-gif-agent", "destination": "/project-gif-agent.html" },
+    { "source": "/project-iflytek-distill", "destination": "/project-iflytek-distill.html" },
+    { "source": "/project-iflytek-km", "destination": "/project-iflytek-km.html" },
+    { "source": "/project-iflytek-sft", "destination": "/project-iflytek-sft.html" },
+    { "source": "/project-tencent-copilot", "destination": "/project-tencent-copilot.html" },
+    { "source": "/project-tencent-eval", "destination": "/project-tencent-eval.html" }
+  ]
+}

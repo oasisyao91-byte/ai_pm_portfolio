@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent 样板间搭建与最佳实践 | Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f97316', // Vibrant Orange
+                        secondary: '#3b82f6', // Bright Blue
+                        accent: '#22d3ee', // Cyan
+                        dark: '#0f172a', // Slate 900
+                        darker: '#020617', // Slate 950
+                        glass: 'rgba(15, 23, 42, 0.7)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        hand: ['Patrick Hand', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-darker selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center gap-2 text-white hover:text-primary transition-colors">
+                    <i class="fas fa-arrow-left"></i>
+                    <span class="font-bold">返回首页</span>
+                </a>
+                <span class="text-gray-400 text-sm font-mono">Project Details</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Header Section -->
+            <div class="mb-12">
+                <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
+                    <span class="px-3 py-1 rounded-full bg-red-500/10 text-red-400 border border-red-500/20">
+                        <i class="fas fa-tag mr-1"></i> 百度实习
+                    </span>
+                    <span class="px-3 py-1 rounded-full bg-pink-500/10 text-pink-400 border border-pink-500/20">
+                        <i class="fas fa-magic mr-1"></i> Agent 搭建
+                    </span>
+                    <span class="text-gray-400">
+                        <i class="far fa-calendar-alt mr-1"></i> 2025.03 - 2025.06
+                    </span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    Agent 样板间搭建与最佳实践
+                </h1>
+                <p class="text-xl text-gray-400 leading-relaxed border-l-4 border-red-500 pl-6">
+                    基于 RAG、FC、TTS 等能力搭建行业 Agent 样板间，针对教育、销售、招聘等高频场景输出标准化搭建指南。
+                </p>
+            </div>
+
+            <!-- Main Image Placeholder (Agent 搭建详情) -->
+            <div class="w-full h-auto bg-slate-800 rounded-2xl border border-white/5 mb-12 relative overflow-hidden group">
+                 <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-500 z-0">
+                    <i class="far fa-image text-6xl mb-4 opacity-50"></i>
+                    <p class="font-mono">Agent 搭建详情展示</p>
+                </div>
+                <img src="./agent-setup.png" class="relative z-10 w-full h-auto object-contain brightness-90 opacity-95 group-hover:brightness-100 group-hover:opacity-100 transition-all duration-500" alt="Agent搭建详情" onerror="this.style.display='none'">
+            </div>
+
+            <!-- Content Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <!-- Left Column: Details -->
+                <div class="md:col-span-2 space-y-12">
+                    
+                    <!-- Section: Background -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fas fa-info-circle text-primary"></i> 项目背景
+                        </h2>
+                        <div class="text-gray-300 leading-relaxed space-y-4">
+                            <p>针对百度千帆平台上教育类客户高频需求“儿童陪伴场景”而设计，旨在通过标准化样板间降低用户搭建门槛，提供功能最佳实践。</p>
+                        </div>
+                    </section>
+
+                    <!-- Section: Implementation -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fas fa-cogs text-secondary"></i> 技术实现与流程
+                        </h2>
+                        <div class="glass-card p-4 rounded-xl border border-white/5 mb-6 overflow-x-auto">
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-2 text-center md:text-left min-w-max md:min-w-0">
+                                <div class="flex-1 px-1">
+                                    <div class="text-[10px] text-gray-400 mb-1 uppercase tracking-wider">输入</div>
+                                    <div class="font-bold text-white text-xs md:text-sm whitespace-nowrap">RTC 实时语音</div>
+                                </div>
+                                <i class="fas fa-arrow-right text-gray-600 text-xs hidden md:block"></i>
+                                <i class="fas fa-arrow-down text-gray-600 text-xs md:hidden"></i>
+                                <div class="flex-1 px-1">
+                                    <div class="text-[10px] text-gray-400 mb-1 uppercase tracking-wider">核心</div>
+                                    <div class="font-bold text-white text-xs md:text-sm whitespace-nowrap">Agent 决策</div>
+                                </div>
+                                <i class="fas fa-arrow-right text-gray-600 text-xs hidden md:block"></i>
+                                <i class="fas fa-arrow-down text-gray-600 text-xs md:hidden"></i>
+                                <div class="flex-1 px-1">
+                                    <div class="text-[10px] text-gray-400 mb-1 uppercase tracking-wider">检索</div>
+                                    <div class="font-bold text-white text-xs md:text-sm whitespace-nowrap">知识库 RAG</div>
+                                </div>
+                                <i class="fas fa-arrow-right text-gray-600 text-xs hidden md:block"></i>
+                                <i class="fas fa-arrow-down text-gray-600 text-xs md:hidden"></i>
+                                <div class="flex-1 px-1">
+                                    <div class="text-[10px] text-gray-400 mb-1 uppercase tracking-wider">处理</div>
+                                    <div class="font-bold text-white text-xs md:text-sm whitespace-nowrap">口语化重组</div>
+                                </div>
+                                <i class="fas fa-arrow-right text-gray-600 text-xs hidden md:block"></i>
+                                <i class="fas fa-arrow-down text-gray-600 text-xs md:hidden"></i>
+                                <div class="flex-1 px-1">
+                                    <div class="text-[10px] text-gray-400 mb-1 uppercase tracking-wider">输出</div>
+                                    <div class="font-bold text-white text-xs md:text-sm whitespace-nowrap">儿童音色 TTS</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                     <!-- Section: Showcase -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fas fa-star text-yellow-400"></i> 双首页展示
+                        </h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Image 1 -->
+                            <div class="space-y-2">
+                                <div class="w-full h-40 bg-slate-800 rounded-lg border border-white/5 overflow-hidden group hover:border-yellow-400/50 transition-colors relative">
+                                    <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-500 z-0">
+                                        <i class="far fa-image text-2xl mb-2 opacity-50"></i>
+                                        <p class="font-mono text-xs">百度千帆首页</p>
+                                    </div>
+                                    <img src="./baidu-home.png" class="relative z-10 w-full h-full object-cover brightness-90 opacity-95 group-hover:brightness-100 group-hover:opacity-100 transition-all duration-500" alt="百度千帆首页展示" onerror="this.style.display='none'">
+                                </div>
+                                <p class="text-center text-sm text-gray-400">百度千帆首页展示</p>
+                            </div>
+                            <!-- Image 2 -->
+                            <div class="space-y-2">
+                                <div class="w-full h-40 bg-slate-800 rounded-lg border border-white/5 overflow-hidden group hover:border-yellow-400/50 transition-colors relative">
+                                    <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-500 z-0">
+                                        <i class="far fa-image text-2xl mb-2 opacity-50"></i>
+                                        <p class="font-mono text-xs">应用广场首页</p>
+                                    </div>
+                                    <img src="./console-home.png" class="relative z-10 w-full h-full object-cover brightness-90 opacity-95 group-hover:brightness-100 group-hover:opacity-100 transition-all duration-500" alt="控制台应用广场首页展示" onerror="this.style.display='none'">
+                                </div>
+                                <p class="text-center text-sm text-gray-400">控制台应用广场首页展示</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Results -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fas fa-chart-line text-green-400"></i> 项目成果
+                        </h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="glass-card p-6 rounded-xl text-center border-t-2 border-green-500">
+                                <div class="text-xl md:text-2xl font-bold text-white mb-1">4k+</div>
+                                <div class="text-xs text-gray-400">用户使用量</div>
+                            </div>
+                            <div class="glass-card p-6 rounded-xl text-center border-t-2 border-green-500">
+                                <div class="text-xl md:text-2xl font-bold text-white mb-1">Double</div>
+                                <div class="text-xs text-gray-400">双首页推荐</div>
+                            </div>
+                            <div class="glass-card p-6 rounded-xl text-center border-t-2 border-green-500">
+                                <div class="text-xl md:text-2xl font-bold text-white mb-1">1h</div>
+                                <div class="text-xs text-gray-400">MVP 快速搭建</div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Right Column: Meta Info -->
+                <div class="space-y-8">
+                    <div class="glass-card p-6 rounded-xl sticky top-24">
+                        <h3 class="text-lg font-bold text-white mb-4 border-b border-white/10 pb-2">关键信息</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Role</span>
+                                <span class="text-white font-medium">产品实习生</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Platform</span>
+                                <span class="text-white font-medium">百度智能云千帆 AppBuilder</span>
+                            </div>
+                             <div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Focus</span>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">RAG</span>
+                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">Agent</span>
+                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">最佳实践</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-6 border-t border-white/10">
+                            <a href="https://console.bce.baidu.com/qianfan/studio/examplePage/4fb80a78-bc95-4b17-a61f-dd8660232553" target="_blank" class="block w-full py-2 bg-red-600 hover:bg-red-700 text-white text-center rounded-lg transition-colors font-bold">
+                                <i class="fas fa-external-link-alt mr-2"></i> 样板间体验
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-600 text-sm border-t border-white/5 mt-12">
+        <p>&copy; 2026 Yao Xiaoyu. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

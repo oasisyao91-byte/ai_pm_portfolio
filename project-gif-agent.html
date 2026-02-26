@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动图素材生成 Agent | Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f97316', // Vibrant Orange
+                        secondary: '#3b82f6', // Bright Blue
+                        accent: '#22d3ee', // Cyan
+                        dark: '#0f172a', // Slate 900
+                        darker: '#020617', // Slate 950
+                        glass: 'rgba(15, 23, 42, 0.7)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        hand: ['Patrick Hand', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-darker selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center gap-2 text-white hover:text-primary transition-colors">
+                    <i class="fas fa-arrow-left"></i>
+                    <span class="font-bold">返回首页</span>
+                </a>
+                <span class="text-gray-400 text-sm font-mono">Project Details</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Header Section -->
+            <div class="mb-12">
+                <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                        <i class="fas fa-tag mr-1"></i> AIGC / Agent
+                    </span>
+                    <span class="text-gray-400">
+                        <i class="far fa-calendar-alt mr-1"></i> 2025.06 - 2025.09
+                    </span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    动图素材生成 Agent
+                </h1>
+                <p class="text-xl text-gray-400 leading-relaxed border-l-4 border-primary pl-6">
+                    端到端动图生产 Agent，覆盖 60+ 运营用户，整体提效约 90%，生成动图 CTR 高于平均水平。
+                </p>
+            </div>
+
+            <!-- Main Image Placeholder -->
+            <div class="w-full bg-slate-800 rounded-2xl border border-white/5 mb-12 relative overflow-hidden group">
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-500">
+                    <i class="far fa-image text-6xl mb-4 opacity-50"></i>
+                    <p class="font-mono">Project Cover Image</p>
+                    <p class="text-sm opacity-60 mt-2">Recommended Size: 1920 x 1080</p>
+                </div>
+                <img src="./gif-agent-cover.jpg" onerror="this.style.display='none'" class="w-full h-auto object-contain relative z-10 block" alt="Project Cover">
+            </div>
+
+            <!-- Content Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <!-- Left Column: Details -->
+                <div class="md:col-span-2 space-y-12">
+                    
+                    <!-- Section: Background -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fas fa-info-circle text-primary"></i> 项目背景与挑战
+                        </h2>
+                        <div class="text-gray-300 leading-relaxed space-y-4">
+                            <p>腾讯视频媒资平台承载全站素材数据，运营在专辑运营中需要大量制作动图封面以提升点击率，但传统流程依赖人工、效率极低。</p>
+                            <p class="bg-slate-800/50 p-4 rounded-lg border-l-2 border-primary">
+                                <strong>核心目标：</strong> 通过 Agent 改造动图生产流程，实现批量化提效，验证 Agent 在内容生产场景中的业务价值。
+                            </p>
+                            <div class="space-y-2 mt-4">
+                                <h4 class="font-bold text-white">业务需求洞察：</h4>
+                                <ul class="list-disc list-inside text-gray-400 space-y-1">
+                                    <li>数据分析发现动图 CTR 显著高于静态图。</li>
+                                    <li>单张制作需 5–10 分钟，具备高 ROI 与人力瓶颈，是理想的 AI 提效场景。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Actions/Solution -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fas fa-cogs text-secondary"></i> 解决方案
+                        </h2>
+                        <div class="text-gray-300 leading-relaxed space-y-8">
+                            
+                            <!-- Action Item 1 -->
+                            <div class="relative pl-8">
+                                <div class="absolute left-0 top-1 w-6 h-6 bg-secondary/20 text-secondary rounded-full flex items-center justify-center text-xs font-bold">1</div>
+                                <h3 class="text-lg font-bold text-white mb-2">端到端 Agent 设计</h3>
+                                <p>设计全自动化的动图生产 Workflow，串联以下核心节点，大幅减少人工干预：</p>
+                                <div class="flex flex-wrap gap-2 mt-2 text-sm">
+                                    <span class="bg-slate-800 px-3 py-1 rounded border border-white/10">静态图理解</span>
+                                    <i class="fas fa-arrow-right self-center text-gray-500"></i>
+                                    <span class="bg-slate-800 px-3 py-1 rounded border border-white/10">动图 Prompt 生成</span>
+                                    <i class="fas fa-arrow-right self-center text-gray-500"></i>
+                                    <span class="bg-slate-800 px-3 py-1 rounded border border-white/10">动图生成</span>
+                                    <i class="fas fa-arrow-right self-center text-gray-500"></i>
+                                    <span class="bg-slate-800 px-3 py-1 rounded border border-white/10">回传入库</span>
+                                </div>
+                            </div>
+
+                            <!-- Action Item 2 -->
+                            <div class="relative pl-8">
+                                <div class="absolute left-0 top-1 w-6 h-6 bg-secondary/20 text-secondary rounded-full flex items-center justify-center text-xs font-bold">2</div>
+                                <h3 class="text-lg font-bold text-white mb-2">质量优化策略</h3>
+                                <ul class="list-disc list-inside space-y-2 text-gray-400">
+                                    <li><strong>特征回流机制：</strong> 规划基于数据反馈的闭环，提取高转化动图特征（如人物特写、粒子光效）反哺动图提示词生成。</li>
+                                    <li><strong>差异化 Prompt 策略：</strong> 针对不同素材类型（如动漫、真人综艺）制定定制化 Prompt 模板，确保产出内容的审美与业务场景高度契合。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Results -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fas fa-chart-line text-accent"></i> 项目成果
+                        </h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="glass-card p-6 rounded-xl text-center">
+                                <div class="text-3xl font-bold text-white mb-1">90%</div>
+                                <div class="text-sm text-gray-400">整体提效</div>
+                            </div>
+                            <div class="glass-card p-6 rounded-xl text-center">
+                                <div class="text-3xl font-bold text-white mb-1">10min</div>
+                                <div class="text-sm text-gray-400">90张图制作时间</div>
+                            </div>
+                             <div class="glass-card p-6 rounded-xl text-center">
+                                <div class="text-3xl font-bold text-white mb-1">3.4%</div>
+                                <div class="text-sm text-gray-400">平均 CTR</div>
+                            </div>
+                        </div>
+                        <p class="mt-6 text-gray-300 bg-slate-800/30 p-4 rounded-lg">
+                            <i class="fas fa-quote-left text-gray-500 mr-2"></i>
+                            Agent 上线后，单专辑约 90 张动图制作时间从 900 分钟缩短至 10 分钟以内；覆盖 60+ 运营用户，生成动图 CTR 高于平均水平，成为平台 AI 化改造的标杆落地场景。
+                        </p>
+                    </section>
+
+                </div>
+
+                <!-- Right Column: Meta Info -->
+                <div class="space-y-8">
+                    <div class="glass-card p-6 rounded-xl sticky top-24">
+                        <h3 class="text-lg font-bold text-white mb-4 border-b border-white/10 pb-2">关键信息</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Role</span>
+                                <span class="text-white font-medium">产品实习生 (Owner)</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Tech Stack</span>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">LLM Agent</span>
+                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">Prompt Engineering</span>
+                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">AIGC Workflow</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Impact</span>
+                                <span class="text-white font-medium">平台 AI 化标杆落地场景</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-600 text-sm border-t border-white/5 mt-12">
+        <p>&copy; 2026 Yao Xiaoyu. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
