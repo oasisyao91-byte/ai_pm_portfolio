@@ -3,3 +3,7 @@ node_modules/
 dist/
 .env
 .vscode/
+ai_ticket_platform/
+venv/
+__pycache__/
+*.xlsx

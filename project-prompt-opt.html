@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prompt 自动优化平台 | Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f97316', // Vibrant Orange
+                        secondary: '#3b82f6', // Bright Blue
+                        dark: '#0f172a', // Slate 900
+                        darker: '#020617', // Slate 950
+                        glass: 'rgba(15, 23, 42, 0.7)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        hand: ['Patrick Hand', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-darker selection:bg-primary selection:text-white flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html#projects" class="flex items-center gap-2 text-white hover:text-primary transition-colors">
+                    <i class="fas fa-arrow-left"></i>
+                    <span class="font-bold">返回首页</span>
+                </a>
+                <span class="text-gray-400 text-sm font-mono">Project Details</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center px-4">
+        <div class="text-center max-w-2xl mx-auto" data-aos="fade-up">
+            <div class="mb-8 relative inline-block">
+                <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
+                <i class="fas fa-magic text-6xl text-primary relative z-10 animate-pulse"></i>
+            </div>
+            
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-4">
+                prompt 自动优化平台
+            </h1>
+            
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/50 border border-white/5 text-gray-400 mb-8 font-mono text-sm">
+                <i class="far fa-calendar-alt"></i> 2026.01 - 2026.03
+            </div>
+            
+            <div class="glass-card p-8 rounded-2xl border border-white/10 relative overflow-hidden group hover:border-primary/30 transition-colors">
+                <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary to-transparent"></div>
+                <p class="text-xl md:text-2xl text-gray-300 font-hand tracking-wide">
+                    "加急整理中，请期待～"
+                </p>
+                <div class="mt-6 flex justify-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-bounce" style="animation-delay: 0s"></span>
+                    <span class="w-2 h-2 rounded-full bg-primary animate-bounce" style="animation-delay: 0.2s"></span>
+                    <span class="w-2 h-2 rounded-full bg-primary animate-bounce" style="animation-delay: 0.4s"></span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

@@ -40,6 +40,20 @@
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
     </style>
 </head>
 <body class="min-h-screen bg-darker selection:bg-primary selection:text-white">
@@ -48,7 +62,7 @@
     <nav class="fixed w-full z-50 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <a href="index.html" class="flex items-center gap-2 text-white hover:text-primary transition-colors">
+                <a href="index.html#project-tencent-copilot" class="flex items-center gap-2 text-white hover:text-primary transition-colors">
                     <i class="fas fa-arrow-left"></i>
                     <span class="font-bold">返回首页</span>
                 </a>
@@ -59,7 +73,7 @@
 
     <!-- Main Content -->
     <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-6xl mx-auto">
             
             <!-- Header Section -->
             <div class="mb-12">
@@ -71,101 +85,223 @@
                         <i class="fas fa-robot mr-1"></i> Copilot / LGUI
                     </span>
                     <span class="text-gray-400">
-                        <i class="far fa-calendar-alt mr-1"></i> 2025.06 - 2025.09
+                        <i class="far fa-calendar-alt mr-1"></i> 2024.06 - 2024.09
                     </span>
                 </div>
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                     媒资数据库 Copilot 设计迭代
                 </h1>
-                <p class="text-xl text-gray-400 leading-relaxed border-l-4 border-primary pl-6">
-                    升级为页面级智能助手 v2.0，引入右侧悬浮气泡、Hover 调用，降低使用门槛，提升工作流融合度。
+                <h2 class="text-xl md:text-2xl text-gray-400 font-light mb-6">
+                    从 LUI 对话框到 GUI 融合型助手
+                </h2>
+                <p class="text-lg text-gray-400 leading-relaxed border-l-4 border-primary pl-6 max-w-3xl">
+                    针对“动图素材生成 Agent”在落地过程中遇到的使用门槛与上下文割裂问题，进行系统性交互重构。将 Copilot 升级为页面级智能助手 v2.0，实现“所见即所得”的工作流融合。
                 </p>
             </div>
 
-            <!-- Main Image Placeholder -->
-            <div class="w-full h-auto bg-slate-800 rounded-2xl border border-white/5 mb-12 relative overflow-hidden group">
-                <img src="./Copilotcover.png" class="w-full h-auto object-contain" alt="Project Cover">
+            <!-- Main Image Placeholder (Cover) -->
+            <div class="w-full h-auto bg-slate-800 rounded-2xl border border-white/5 mb-12 relative overflow-hidden group shadow-2xl">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10"></div>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-500 z-0">
+                    <i class="fas fa-columns text-6xl mb-4 opacity-50"></i>
+                    <p class="font-mono">Copilot Interaction Design</p>
+                </div>
+                <img src="./Copilotcover.png" class="w-full h-auto object-cover opacity-90 hover:scale-105 transition-transform duration-700 relative z-10" alt="Copilot Cover" onerror="this.style.display='none'">
             </div>
 
-            <!-- Content Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
                 
-                <!-- Left Column: Details -->
-                <div class="md:col-span-2 space-y-12">
+                <!-- Left Column: Main Content (8 cols) -->
+                <div class="lg:col-span-8 space-y-16">
                     
-                    <!-- Section: Background -->
+                    <!-- 1. 背景与挑战 -->
                     <section>
-                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <i class="fas fa-info-circle text-primary"></i> 项目背景
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <span class="w-1 h-8 bg-primary rounded-full"></span>
+                            迭代背景：Agent 落地后的“水土不服”
                         </h2>
-                        <div class="text-gray-300 leading-relaxed space-y-4">
-                            <p>调研发现用户对数据库操作路径高度固化，纯对话式 Agent 使用门槛高；同时 Agent 异步任务耗时较长，需要优化人机交互以保证使用心流，目标提升 Agent 的易用性与工作流融合度。</p>
-                        </div>
-                    </section>
-
-                    <!-- Section: Problem Breakdown -->
-                    <section>
-                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <i class="fas fa-exclamation-triangle text-red-400"></i> 问题拆解
-                        </h2>
-                        <div class="text-gray-300 leading-relaxed space-y-4">
-                            <p>通过用户调研发现，影响非技术用户使用的核心痛点如下：</p>
-                            <ul class="list-disc pl-5 space-y-2 text-gray-300">
-                                <li><strong>Prompt 输入理解成本高：</strong> 一句话说不清楚需求，AI多轮追问澄清意图。</li>
-                                <li><strong>Agent 与页面上下文割裂失焦：</strong> “这段对话在聊哪个素材来着？忘了，复制素材 id 回去搜搜。”</li>
-                                <li><strong>长耗时任务管理不标：</strong> “素材生产完了吗？手动刷新问一问。”</li>
-                            </ul>
-                        </div>
-                    </section>
-
-                    <!-- Section: Interaction Upgrade -->
-                    <section>
-                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <i class="fas fa-magic text-secondary"></i> 交互升级
-                        </h2>
-                        <div class="text-gray-300 leading-relaxed space-y-4">
-                            <p>引入右侧悬浮气泡、页面内一键触发、表格 Hover 调用，将数据库管理对话 Copilot 升级为页面级智能助手 v2.0。</p>
-                            
-                            <!-- Analysis Image Placeholder -->
-                            <div class="mt-6 w-full h-auto bg-slate-800 rounded-lg border border-white/5 overflow-hidden group hover:border-secondary/50 transition-colors">
-                                <img src="./Copilotcover.png" class="w-full h-auto object-contain transform group-hover:scale-[1.02] transition-transform duration-500" alt="交互流程对比">
+                        <div class="glass-card p-6 rounded-xl border border-white/5">
+                            <p class="text-gray-300 mb-4 leading-relaxed">
+                                “动图素材生成 Agent”初版上线后，虽然功能强大，但采用了传统的 <strong>LUI (Language User Interface)</strong> 纯文本对话模式。在实际测试中，我们发现了两个阻碍用户使用的关键问题：
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                                <div class="bg-slate-800/50 p-5 rounded-lg border-l-4 border-red-500">
+                                    <h3 class="text-white font-bold mb-2">1. 使用门槛高 (Prompt 依赖)</h3>
+                                    <p class="text-gray-400 text-xs leading-relaxed">
+                                        用户必须精确输入指令，例如“请把素材ID为xxx的图转动图”。非技术背景的运营人员很难一次掌握 Prompt 技巧，导致 Agent 需要多次追问澄清问题。
+                                    </p>
+                                </div>
+                                <div class="bg-slate-800/50 p-5 rounded-lg border-l-4 border-orange-500">
+                                    <h3 class="text-white font-bold mb-2">2. 上下文割裂 (Context Loss)</h3>
+                                    <p class="text-gray-400 text-xs leading-relaxed">
+                                        Agent 窗口在右侧，素材列表在左侧。用户在对话时无法直观看到自己操作的是哪一张图，经常需要“复制 ID -> 搜索确认 -> 再对话”，交互极其割裂。
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </section>
 
-                    <!-- Section: Results -->
+                    <!-- 2. 交互升级方案 -->
                     <section>
-                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <i class="fas fa-chart-line text-accent"></i> 项目成果
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <span class="w-1 h-8 bg-secondary rounded-full"></span>
+                            解决方案：升级为“页面级智能助手”
                         </h2>
-                        <div class="glass-card p-6 rounded-xl border-l-4 border-green-500 mb-6">
-                            <h3 class="font-bold text-white mb-2">从纯文本对话到 LGUI Agent</h3>
-                            <p class="text-gray-300 text-sm">显著降低用户使用门槛与 Prompt 依赖，Agent 深度融入媒资管理流程，成为可持续使用的生产力工具。</p>
+                        
+                        <div class="space-y-6">
+                            <!-- Evolution Comparison -->
+                            <div class="glass-card p-6 rounded-xl border-l-4 border-secondary mb-6">
+                                <h3 class="text-xl font-bold text-white mb-4">交互演进：从 LUI 到 GUI 融合</h3>
+                                <p class="text-gray-300 text-sm mb-6">
+                                    在项目初期（Version 1.0），我们采用了传统的 <strong>LUI (Chatbot)</strong> 模式，用户需精确输入 Prompt（如任务类型、素材ID）。这导致了“使用门槛高”和“上下文割裂”的问题。为此，我们在 Version 2.0 进行了系统性重构。
+                                </p>
+                                <div class="flex flex-col md:flex-row gap-4 items-center">
+                                    <div class="flex-1 bg-slate-900/50 p-4 rounded text-center opacity-60">
+                                        <div class="text-gray-500 text-xs mb-1">Version 1.0</div>
+                                        <div class="text-white font-bold">LUI 对话式</div>
+                                        <div class="text-xs text-gray-500 mt-2">需精确输入 Prompt，操作割裂</div>
+                                    </div>
+                                    <i class="fas fa-arrow-right text-secondary"></i>
+                                    <div class="flex-1 bg-slate-900/50 p-4 rounded text-center border border-secondary/30">
+                                        <div class="text-secondary text-xs mb-1">Version 2.0</div>
+                                        <div class="text-white font-bold">GUI 融合型助手</div>
+                                        <div class="text-xs text-gray-400 mt-2">右侧悬浮 + 表格 Hover 触发</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="glass-card p-6 rounded-xl border border-white/5">
+                                <h3 class="text-xl font-bold text-white mb-4">关键特性设计</h3>
+                                
+                                <div class="space-y-4">
+                                    <!-- Feature 1 -->
+                                    <div class="flex gap-4">
+                                        <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 text-secondary">
+                                            <i class="fas fa-mouse-pointer"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-white font-bold">右侧悬浮气泡交互</h4>
+                                            <p class="text-gray-400 text-sm">用户可直接点击页面上的专辑，一键发起动图生产，无需输入复杂 Prompt。</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Feature 2 -->
+                                    <div class="flex gap-4">
+                                        <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 text-secondary">
+                                            <i class="fas fa-magic"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-white font-bold">主动识别与批量补齐</h4>
+                                            <p class="text-gray-400 text-sm">Agent 自动识别当前专辑下缺失动图的素材，并一键触发批量补齐，大幅减少人工操作。</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Feature 3 -->
+                                    <div class="flex gap-4">
+                                        <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 text-secondary">
+                                            <i class="fas fa-eye"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-white font-bold">表格内悬停调用 (Hover Actions)</h4>
+                                            <p class="text-gray-400 text-sm">用户在素材列表中 Hover 时，右键直接调出 Agent 进行生产，实现真正的“所见即所得”。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Image Placeholder -->
+                            <div class="w-full h-auto bg-slate-800 rounded-xl border border-white/5 overflow-hidden group relative">
+                                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-500 z-0">
+                                    <i class="fas fa-exchange-alt text-4xl mb-2 opacity-50"></i>
+                                    <p class="font-mono text-sm">交互流程对比分析图</p>
+                                </div>
+                                <img src="./Copilotcover.png" class="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity relative z-10" alt="交互对比" onerror="this.style.display='none'">
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 3. 复盘与反思 -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <span class="w-1 h-8 bg-red-500 rounded-full"></span>
+                            复盘与反思：从“0 采纳”到破局
+                        </h2>
+                        <div class="glass-card p-6 rounded-xl border border-red-500/20 bg-red-500/5">
+                            <div class="mb-6">
+                                <h3 class="text-red-400 font-bold mb-2">问题：上线初期采纳率极低</h3>
+                                <p class="text-gray-400 text-sm">
+                                    上线初期发现，虽然功能可用，但最终采纳率甚至接近 0。复盘发现主要原因：
+                                </p>
+                                <ul class="list-disc list-inside text-gray-400 text-sm mt-2 space-y-1">
+                                    <li><strong>用户心智惯性：</strong>更习惯沿用原有操作方式。</li>
+                                    <li><strong>功能边界有限：</strong>无法满足定制化需求。</li>
+                                    <li><strong>场景刚需度不足：</strong>部分任务量不高，非高频痛点。</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="border-t border-white/10 pt-6">
+                                <h3 class="text-white font-bold mb-3"><i class="fas fa-lightbulb text-yellow-400 mr-2"></i>关键教训 (Lessons Learned)</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-slate-900/50 p-4 rounded border border-white/5">
+                                        <div class="text-white font-bold text-sm mb-1">前期验证至关重要</div>
+                                        <p class="text-gray-500 text-xs">需通过访谈和小规模测试验证真实痛点，将资源投入到高频刚需场景。</p>
+                                    </div>
+                                    <div class="bg-slate-900/50 p-4 rounded border border-white/5">
+                                        <div class="text-white font-bold text-sm mb-1">渐进式引导</div>
+                                        <p class="text-gray-500 text-xs">上线后需设计引导机制，降低用户从旧习惯切换的心理成本。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 3. 核心价值 -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <span class="w-1 h-8 bg-green-500 rounded-full"></span>
+                            核心价值：让 AI 融入业务流
+                        </h2>
+                        <div class="glass-card p-6 rounded-xl border-l-4 border-green-500 bg-green-500/5">
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                通过这次迭代，我们让 Agent 从“能完成任务”走向“融入工作流”。<br>
+                                它不再是一个需要专门去“聊”的机器人，而是一个随手可用的、感知上下文的<strong class="text-white">页面级 Copilot</strong>。这为后续其他 AI 能力（如自动打标、内容检索）的接入建立了标准的交互框架。
+                            </p>
                         </div>
                     </section>
 
                 </div>
 
-                <!-- Right Column: Meta Info -->
-                <div class="space-y-8">
+                <!-- Right Column: Meta Info & Navigation (4 cols) -->
+                <div class="lg:col-span-4 space-y-8">
+                    
+                    <!-- Info Card -->
                     <div class="glass-card p-6 rounded-xl sticky top-24">
                         <h3 class="text-lg font-bold text-white mb-4 border-b border-white/10 pb-2">关键信息</h3>
                         
-                        <div class="space-y-4">
+                        <div class="space-y-6">
                             <div>
                                 <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Role</span>
-                                <span class="text-white font-medium">产品实习生</span>
+                                <span class="text-white font-medium">产品实习生 (PM & UX)</span>
                             </div>
                             <div>
-                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Focus</span>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">交互设计</span>
-                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">用户体验</span>
-                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">Agent</span>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Core Work</span>
+                                <ul class="text-xs text-gray-400 mt-2 space-y-1 list-disc list-inside">
+                                    <li>用户行为痛点分析</li>
+                                    <li>LUI 到 GUI 的交互重构</li>
+                                    <li>Prompt Less 设计</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Concept</span>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="px-2 py-1 bg-slate-700/50 border border-white/5 rounded text-xs text-gray-300">LGUI</span>
+                                    <span class="px-2 py-1 bg-slate-700/50 border border-white/5 rounded text-xs text-gray-300">Context Aware</span>
+                                    <span class="px-2 py-1 bg-slate-700/50 border border-white/5 rounded text-xs text-gray-300">Copilot</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
             </div>

@@ -40,6 +40,20 @@
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
     </style>
 </head>
 <body class="min-h-screen bg-darker selection:bg-primary selection:text-white">
@@ -48,7 +62,7 @@
     <nav class="fixed w-full z-50 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <a href="index.html" class="flex items-center gap-2 text-white hover:text-primary transition-colors">
+                <a href="index.html#project-gif-agent" class="flex items-center gap-2 text-white hover:text-primary transition-colors">
                     <i class="fas fa-arrow-left"></i>
                     <span class="font-bold">返回首页</span>
                 </a>
@@ -59,148 +73,190 @@
 
     <!-- Main Content -->
     <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-6xl mx-auto">
             
             <!-- Header Section -->
             <div class="mb-12">
                 <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
                     <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                        <i class="fas fa-tag mr-1"></i> AIGC / Agent
+                        <i class="fas fa-tag mr-1"></i> 腾讯实习
+                    </span>
+                    <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                        <i class="fas fa-film mr-1"></i> AIGC Agent
                     </span>
                     <span class="text-gray-400">
-                        <i class="far fa-calendar-alt mr-1"></i> 2025.06 - 2025.09
+                        <i class="far fa-calendar-alt mr-1"></i> 2024.06 - 2024.09
                     </span>
                 </div>
-                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
                     动图素材生成 Agent
                 </h1>
-                <p class="text-xl text-gray-400 leading-relaxed border-l-4 border-primary pl-6">
-                    端到端动图生产 Agent，覆盖 60+ 运营用户，整体提效约 90%，生成动图 CTR 高于平均水平。
+                <h2 class="text-xl md:text-2xl text-gray-400 font-light mb-6">
+                    从“降本”到“增效”的 AIGC 生产力变革
+                </h2>
+                <p class="text-lg text-gray-400 leading-relaxed border-l-4 border-primary pl-6 max-w-3xl">
+                    端到端动图生产 Agent，覆盖 60+ 核心运营。通过“人效压缩”与“质量回流”双引擎，实现生产效率 90 倍提升，点击转化率 (CTR) 超全站平均水平。
                 </p>
             </div>
 
-            <!-- Main Image Placeholder -->
-            <div class="w-full bg-slate-800 rounded-2xl border border-white/5 mb-12 relative overflow-hidden group">
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-500">
-                    <i class="far fa-image text-6xl mb-4 opacity-50"></i>
+            <!-- Main Image Placeholder (Cover) -->
+            <div class="w-full h-auto bg-slate-800 rounded-2xl border border-white/5 mb-12 relative overflow-hidden group shadow-2xl">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10"></div>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-500 z-0">
+                    <i class="fas fa-film text-6xl mb-4 opacity-50"></i>
                     <p class="font-mono">Project Cover Image</p>
-                    <p class="text-sm opacity-60 mt-2">Recommended Size: 1920 x 1080</p>
                 </div>
-                <img src="./gif-agent-cover.jpg" onerror="this.style.display='none'" class="w-full h-auto object-contain relative z-10 block" alt="Project Cover">
+                <img src="./gif-agent-cover.jpg" class="w-full h-auto object-cover opacity-90 hover:scale-105 transition-transform duration-700 relative z-10" alt="动图 Agent 封面" onerror="this.style.display='none'">
             </div>
 
-            <!-- Content Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
                 
-                <!-- Left Column: Details -->
-                <div class="md:col-span-2 space-y-12">
+                <!-- Left Column: Main Content (8 cols) -->
+                <div class="lg:col-span-8 space-y-16">
                     
-                    <!-- Section: Background -->
+                    <!-- 1. 背景与痛点 -->
                     <section>
-                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <i class="fas fa-info-circle text-primary"></i> 项目背景与挑战
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <span class="w-1 h-8 bg-primary rounded-full"></span>
+                            项目背景：寻找 AI 落地场景
                         </h2>
-                        <div class="text-gray-300 leading-relaxed space-y-4">
-                            <p>腾讯视频媒资平台承载全站素材数据，运营在专辑运营中需要大量制作动图封面以提升点击率，但传统流程依赖人工、效率极低。</p>
-                            <p class="bg-slate-800/50 p-4 rounded-lg border-l-2 border-primary">
-                                <strong>核心目标：</strong> 通过 Agent 改造动图生产流程，实现批量化提效，验证 Agent 在内容生产场景中的业务价值。
+                        <div class="glass-card p-6 rounded-xl border border-white/5">
+                            <p class="text-gray-300 mb-4 leading-relaxed">
+                                当时我们负责的是腾讯视频的媒体资料数据库管理平台。为响应公司“平台 AI 化改造”的任务，我们需要寻找一个既有业务价值又能落地的场景。经过数据分析，我们发现<strong>动图封面</strong>的点击率显著高于静图，但生产成本极高，是绝佳的切入点。
                             </p>
-                            <div class="space-y-2 mt-4">
-                                <h4 class="font-bold text-white">业务需求洞察：</h4>
-                                <ul class="list-disc list-inside text-gray-400 space-y-1">
-                                    <li>数据分析发现动图 CTR 显著高于静态图。</li>
-                                    <li>单张制作需 5–10 分钟，具备高 ROI 与人力瓶颈，是理想的 AI 提效场景。</li>
-                                </ul>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                                <div class="bg-slate-800/50 p-4 rounded-lg">
+                                    <div class="text-red-400 font-bold mb-1">Before: 人力瓶颈</div>
+                                    <p class="text-gray-400 text-sm">
+                                        运营需手动下载、找工具生成、再上传。一个 S+ 级专辑（近 90 张素材）耗时约 <strong class="text-white">900 分钟</strong>（约 1 天）。
+                                    </p>
+                                </div>
+                                <div class="bg-slate-800/50 p-4 rounded-lg border border-green-500/20">
+                                    <div class="text-green-400 font-bold mb-1">After: Agent 自动化</div>
+                                    <p class="text-gray-400 text-sm">
+                                        Agent 串联全流程。同等工作量缩短至 <strong class="text-white">10 分钟以内</strong>，实现 90 倍人效提升。
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </section>
 
-                    <!-- Section: Actions/Solution -->
+                    <!-- 2. 解决方案设计 -->
                     <section>
-                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <i class="fas fa-cogs text-secondary"></i> 解决方案
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <span class="w-1 h-8 bg-secondary rounded-full"></span>
+                            解决方案：效率与质量的双重突破
                         </h2>
-                        <div class="text-gray-300 leading-relaxed space-y-8">
-                            
-                            <!-- Action Item 1 -->
-                            <div class="relative pl-8">
-                                <div class="absolute left-0 top-1 w-6 h-6 bg-secondary/20 text-secondary rounded-full flex items-center justify-center text-xs font-bold">1</div>
-                                <h3 class="text-lg font-bold text-white mb-2">端到端 Agent 设计</h3>
-                                <p>设计全自动化的动图生产 Workflow，串联以下核心节点，大幅减少人工干预：</p>
-                                <div class="flex flex-wrap gap-2 mt-2 text-sm">
-                                    <span class="bg-slate-800 px-3 py-1 rounded border border-white/10">静态图理解</span>
-                                    <i class="fas fa-arrow-right self-center text-gray-500"></i>
-                                    <span class="bg-slate-800 px-3 py-1 rounded border border-white/10">动图 Prompt 生成</span>
-                                    <i class="fas fa-arrow-right self-center text-gray-500"></i>
-                                    <span class="bg-slate-800 px-3 py-1 rounded border border-white/10">动图生成</span>
-                                    <i class="fas fa-arrow-right self-center text-gray-500"></i>
-                                    <span class="bg-slate-800 px-3 py-1 rounded border border-white/10">回传入库</span>
+                        
+                        <div class="space-y-6">
+                            <!-- Phase 1: Efficiency -->
+                            <div class="bg-slate-800/30 p-6 rounded-xl border border-white/5 hover:border-secondary/30 transition-colors">
+                                <h3 class="text-xl font-bold text-white mb-3">Phase 1: 效率提升（自动化闭环）</h3>
+                                <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                                    我们设计的 Agent 自动串联了整个动图生产流程，运营仅需最后做一次人工确认：
+                                </p>
+                                <div class="flex flex-wrap gap-2 text-xs text-gray-400">
+                                    <span class="bg-slate-700 px-2 py-1 rounded">识别静图元素</span>
+                                    <i class="fas fa-arrow-right self-center"></i>
+                                    <span class="bg-slate-700 px-2 py-1 rounded">LLM 生成 Prompt</span>
+                                    <i class="fas fa-arrow-right self-center"></i>
+                                    <span class="bg-slate-700 px-2 py-1 rounded">动图模型生成</span>
+                                    <i class="fas fa-arrow-right self-center"></i>
+                                    <span class="bg-slate-700 px-2 py-1 rounded">自动回传入库</span>
                                 </div>
                             </div>
 
-                            <!-- Action Item 2 -->
-                            <div class="relative pl-8">
-                                <div class="absolute left-0 top-1 w-6 h-6 bg-secondary/20 text-secondary rounded-full flex items-center justify-center text-xs font-bold">2</div>
-                                <h3 class="text-lg font-bold text-white mb-2">质量优化策略</h3>
-                                <ul class="list-disc list-inside space-y-2 text-gray-400">
-                                    <li><strong>特征回流机制：</strong> 规划基于数据反馈的闭环，提取高转化动图特征（如人物特写、粒子光效）反哺动图提示词生成。</li>
-                                    <li><strong>差异化 Prompt 策略：</strong> 针对不同素材类型（如动漫、真人综艺）制定定制化 Prompt 模板，确保产出内容的审美与业务场景高度契合。</li>
-                                </ul>
+                            <!-- Phase 2: Quality -->
+                            <div class="bg-slate-800/30 p-6 rounded-xl border border-white/5 hover:border-secondary/30 transition-colors">
+                                <h3 class="text-xl font-bold text-white mb-3">Phase 2: 质量提升（数据驱动）</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h4 class="text-green-400 font-bold text-sm mb-2"><i class="fas fa-sync-alt mr-2"></i>特征回流机制</h4>
+                                        <p class="text-gray-400 text-xs leading-relaxed">
+                                            Agent 自动分析历史高 CTR 动图（如人物特写、粒子光效），将这些“吸睛特征”结构化回流到 Prompt 生成阶段，让 AI 学会“什么样的动图更吸引人”，实现<strong>数据—策略—生成的闭环优化</strong>。
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-green-400 font-bold text-sm mb-2"><i class="fas fa-layer-group mr-2"></i>分类型生成策略</h4>
+                                        <p class="text-gray-400 text-xs leading-relaxed">
+                                            针对不同素材类型（动漫 vs 真人综艺）调用差异化的 Prompt 模板。动漫强调动作特效，真人强调情绪氛围，确保产出风格统一且贴合内容。
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>
 
-                    <!-- Section: Results -->
+                    <!-- 3. 核心成果 -->
                     <section>
-                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <i class="fas fa-chart-line text-accent"></i> 项目成果
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <span class="w-1 h-8 bg-green-500 rounded-full"></span>
+                            最终成果与个人成长
                         </h2>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        
+                        <!-- Quantitative Results -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                             <div class="glass-card p-6 rounded-xl text-center">
-                                <div class="text-3xl font-bold text-white mb-1">90%</div>
-                                <div class="text-sm text-gray-400">整体提效</div>
+                                <div class="text-3xl font-bold text-white mb-1">90x</div>
+                                <div class="text-sm text-gray-400">人效提升</div>
                             </div>
                             <div class="glass-card p-6 rounded-xl text-center">
-                                <div class="text-3xl font-bold text-white mb-1">10min</div>
-                                <div class="text-sm text-gray-400">90张图制作时间</div>
+                                <div class="text-3xl font-bold text-white mb-1">3.4%</div>
+                                <div class="text-sm text-gray-400">平均 CTR (优于大盘)</div>
                             </div>
                              <div class="glass-card p-6 rounded-xl text-center">
-                                <div class="text-3xl font-bold text-white mb-1">3.4%</div>
-                                <div class="text-sm text-gray-400">平均 CTR</div>
+                                <div class="text-3xl font-bold text-white mb-1">60+</div>
+                                <div class="text-sm text-gray-400">覆盖核心运营</div>
                             </div>
                         </div>
-                        <p class="mt-6 text-gray-300 bg-slate-800/30 p-4 rounded-lg">
-                            <i class="fas fa-quote-left text-gray-500 mr-2"></i>
-                            Agent 上线后，单专辑约 90 张动图制作时间从 900 分钟缩短至 10 分钟以内；覆盖 60+ 运营用户，生成动图 CTR 高于平均水平，成为平台 AI 化改造的标杆落地场景。
-                        </p>
+
+                        <!-- Personal Growth -->
+                        <div class="glass-card p-6 rounded-xl border-l-4 border-purple-500">
+                            <h3 class="text-lg font-bold text-white mb-3">个人能力成长</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                                这个项目让我第一次完整经历了一个 AI 产品从场景选择、流程设计到落地验证的全过程。
+                            </p>
+                            <ul class="list-disc list-inside text-gray-400 text-xs space-y-2">
+                                <li><strong>业务抽象能力：</strong>学会如何将复杂的运营工作流抽象为 AI 可执行的标准化流程。</li>
+                                <li><strong>AI 交互设计：</strong>深刻理解了如何将 AI 能力真正“嵌入”业务，而非仅仅作为一个外挂工具。</li>
+                                <li><strong>闭环思维：</strong>通过设计特征回流，建立了从数据反馈到模型优化的完整闭环。</li>
+                            </ul>
+                        </div>
                     </section>
 
                 </div>
 
-                <!-- Right Column: Meta Info -->
-                <div class="space-y-8">
+                <!-- Right Column: Meta Info & Navigation (4 cols) -->
+                <div class="lg:col-span-4 space-y-8">
+                    
+                    <!-- Info Card -->
                     <div class="glass-card p-6 rounded-xl sticky top-24">
                         <h3 class="text-lg font-bold text-white mb-4 border-b border-white/10 pb-2">关键信息</h3>
                         
-                        <div class="space-y-4">
+                        <div class="space-y-6">
                             <div>
                                 <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Role</span>
                                 <span class="text-white font-medium">产品实习生 (Owner)</span>
                             </div>
                             <div>
-                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Tech Stack</span>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">LLM Agent</span>
-                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">Prompt Engineering</span>
-                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">AIGC Workflow</span>
-                                </div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Key Contribution</span>
+                                <ul class="text-xs text-gray-400 mt-2 space-y-1 list-disc list-inside">
+                                    <li>抽象业务流程与痛点</li>
+                                    <li>主导交互模式演进 (LUI -> GUI)</li>
+                                    <li>设计数据闭环优化策略</li>
+                                </ul>
                             </div>
                             <div>
-                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Impact</span>
-                                <span class="text-white font-medium">平台 AI 化标杆落地场景</span>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Stack</span>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="px-2 py-1 bg-slate-700/50 border border-white/5 rounded text-xs text-gray-300">LLM Agent</span>
+                                    <span class="px-2 py-1 bg-slate-700/50 border border-white/5 rounded text-xs text-gray-300">Prompt Engineering</span>
+                                    <span class="px-2 py-1 bg-slate-700/50 border border-white/5 rounded text-xs text-gray-300">Workflow Design</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
             </div>

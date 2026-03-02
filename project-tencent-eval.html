@@ -40,6 +40,20 @@
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
     </style>
 </head>
 <body class="min-h-screen bg-darker selection:bg-primary selection:text-white">
@@ -48,7 +62,7 @@
     <nav class="fixed w-full z-50 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <a href="index.html" class="flex items-center gap-2 text-white hover:text-primary transition-colors">
+                <a href="index.html#project-tencent-eval" class="flex items-center gap-2 text-white hover:text-primary transition-colors">
                     <i class="fas fa-arrow-left"></i>
                     <span class="font-bold">返回首页</span>
                 </a>
@@ -59,7 +73,7 @@
 
     <!-- Main Content -->
     <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-6xl mx-auto">
             
             <!-- Header Section -->
             <div class="mb-12">
@@ -71,101 +85,261 @@
                         <i class="fas fa-balance-scale mr-1"></i> 模型评测
                     </span>
                     <span class="text-gray-400">
-                        <i class="far fa-calendar-alt mr-1"></i> 2025.06 - 2025.09
+                        <i class="far fa-calendar-alt mr-1"></i> 2024.06 - 2024.09
                     </span>
                 </div>
-                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
                     大模型选型与业务评测
                 </h1>
-                <p class="text-xl text-gray-400 leading-relaxed border-l-4 border-primary pl-6">
-                    构建定制化业务测试集与多维评分体系，明确模型差异化优势，赋能业务场景模型选型与替换。
+                <h2 class="text-xl md:text-2xl text-gray-400 font-light mb-6">
+                    场景化模型动态评测体系
+                </h2>
+                <p class="text-lg text-gray-400 leading-relaxed border-l-4 border-primary pl-6 max-w-3xl">
+                    针对腾讯视频 AI 视频翻译、影视日报等业务场景，建立“场景化模型动态评测体系”，通过科学的实验对比，为各业务线提供最具 ROI（投入产出比）的模型选型决策。
                 </p>
             </div>
 
             <!-- Main Image Placeholder (Cover) -->
-            <div class="w-full h-auto bg-slate-800 rounded-2xl border border-white/5 mb-12 relative overflow-hidden group">
-                <img src="./3多维横评赋能业务.png" class="w-full h-auto object-contain brightness-75 opacity-90 group-hover:brightness-100 group-hover:opacity-100 transition-all duration-500" alt="多维横评赋能业务">
+            <div class="w-full h-auto bg-slate-800 rounded-2xl border border-white/5 mb-12 relative overflow-hidden group shadow-2xl">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10"></div>
+                <img src="./3多维横评赋能业务.png" class="w-full h-auto object-cover opacity-90 hover:scale-105 transition-transform duration-700" alt="多维横评赋能业务" onerror="this.style.display='none'">
             </div>
 
-            <!-- Content Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
                 
-                <!-- Left Column: Details -->
-                <div class="md:col-span-2 space-y-12">
+                <!-- Left Column: Main Content (8 cols) -->
+                <div class="lg:col-span-8 space-y-16">
                     
-                    <!-- Section: Background -->
+                    <!-- 1. 背景与痛点 -->
                     <section>
-                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <i class="fas fa-info-circle text-primary"></i> 项目背景
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <span class="w-1 h-8 bg-primary rounded-full"></span>
+                            项目背景与痛点
                         </h2>
-                        <div class="text-gray-300 leading-relaxed space-y-4">
-                            <p>需在多业务场景中引入大模型能力，通用模型榜单难以满足实际需求，目标是建立面向业务的模型选型与评测机制。</p>
-                        </div>
-                    </section>
-
-                    <!-- Section: Evaluation Design -->
-                    <section>
-                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <i class="fas fa-tasks text-secondary"></i> 评测设计
-                        </h2>
-                        <div class="text-gray-300 leading-relaxed space-y-4">
-                            <p>构建 200+ 定制化业务测试数集，覆盖影视图片理解、信息检索、多语种翻译与对口型等核心业务场景。</p>
-                            
-                            <!-- Image 1 Placeholder -->
-                            <div class="mt-6 w-full h-auto bg-slate-800 rounded-lg border border-white/5 overflow-hidden group hover:border-secondary/50 transition-colors">
-                                <img src="./1迁移评测能力.png" class="w-full h-auto object-contain brightness-75 opacity-90 group-hover:brightness-100 group-hover:opacity-100 transition-all duration-500" alt="迁移评测能力">
+                        <div class="glass-card p-6 rounded-xl border border-white/5">
+                            <p class="text-gray-300 mb-4 leading-relaxed">
+                                在腾讯视频内部，我们有大量的 AI 应用场景（如 AI 视频翻译、影视日报等）。随着基础大模型迭代极快，我们面临的核心痛点是：
+                            </p>
+                            <div class="bg-red-500/10 border-l-4 border-red-500 p-4 rounded-r-lg mb-4">
+                                <p class="text-red-200 font-medium">“通用的模型榜单（Leaderboard）无法代表真实的业务表现”</p>
                             </div>
+                            <p class="text-gray-300 leading-relaxed">
+                                因此，我们摒弃了大而全的跑分，转而建立<strong class="text-white">“场景化模型动态评测体系”</strong>，聚焦在<strong class="text-white">“定制化 Benchmark”</strong>，旨在解决“选哪个模型最划算”的 ROI 问题。
+                            </p>
                         </div>
                     </section>
 
-                    <!-- Section: Model Comparison -->
+                    <!-- 2. 核心亮点 -->
                     <section>
-                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <i class="fas fa-balance-scale-right text-accent"></i> 模型对比
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <span class="w-1 h-8 bg-secondary rounded-full"></span>
+                            核心亮点：从“通用”到“垂直”
                         </h2>
-                        <div class="text-gray-300 leading-relaxed space-y-4">
-                            <p>构建多维评分体系，对 Gemini、GPT-5、DeepSeek R1、Grok4、混元等模型进行横向测试与评分。</p>
-                            
-                            <!-- Image 2 Placeholder -->
-                            <div class="mt-6 w-full h-auto bg-slate-800 rounded-lg border border-white/5 overflow-hidden group hover:border-accent/50 transition-colors">
-                                <img src="./2寻找模型亮点突破口.png" class="w-full h-auto object-contain brightness-75 opacity-90 group-hover:brightness-100 group-hover:opacity-100 transition-all duration-500" alt="寻找模型亮点突破口">
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Section: Results -->
-                    <section>
-                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <i class="fas fa-chart-line text-green-400"></i> 项目成果
-                        </h2>
-                        <div class="glass-card p-6 rounded-xl border-l-4 border-green-500 mb-6">
-                            <h3 class="font-bold text-white mb-2">明确差异化优势，支撑业务落地</h3>
-                            <p class="text-gray-300 text-sm">明确不同模型在翻译、搜索等场景下的差异化优势，输出模型能力雷达图，支撑部分业务场景完成模型替换。</p>
-                        </div>
-                    </section>
-
-                </div>
-
-                <!-- Right Column: Meta Info -->
-                <div class="space-y-8">
-                    <div class="glass-card p-6 rounded-xl sticky top-24">
-                        <h3 class="text-lg font-bold text-white mb-4 border-b border-white/10 pb-2">关键信息</h3>
                         
-                        <div class="space-y-4">
-                            <div>
-                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Role</span>
-                                <span class="text-white font-medium">产品实习生</span>
+                        <div class="space-y-6">
+                            <!-- Highlight 1 -->
+                            <div class="bg-slate-800/30 p-6 rounded-xl border border-white/5 hover:border-secondary/30 transition-colors">
+                                <h3 class="text-xl font-bold text-white mb-3">亮点一：小规模高质定制数据集 (Golden Set)</h3>
+                                <p class="text-gray-300 mb-4">针对不同业务，手动构造 100-200 条核心测试集。不盲目追求数量，而是通过分层抽样确保覆盖 80% 的高频场景。</p>
+                                <div class="bg-slate-900/50 p-4 rounded-lg">
+                                    <p class="text-sm text-gray-400 mb-2"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i><strong>案例：AI 翻译场景</strong></p>
+                                    <p class="text-gray-300 text-sm">除了常规的“准确率”，我们独创了<strong class="text-secondary">“文本长度匹配度”</strong>指标。因为视频配音需要“对口型”，如果翻译后字数差异过大，会导致后期配音严重对不上位。这是通用榜单无法覆盖的业务强相关维度。</p>
+                                </div>
                             </div>
-                            <div>
-                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Focus</span>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">模型评测</span>
-                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">数据分析</span>
-                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">LLM</span>
+
+                            <!-- Highlight 2 -->
+                            <div class="bg-slate-800/30 p-6 rounded-xl border border-white/5 hover:border-secondary/30 transition-colors">
+                                <h3 class="text-xl font-bold text-white mb-3">亮点二：多维度的“能力雷达图”评估</h3>
+                                <p class="text-gray-300 mb-4">摒弃单一总分制，通过雷达图交付，拆解为更细颗粒度的业务指标。</p>
+                                <div class="bg-slate-900/50 p-4 rounded-lg">
+                                    <p class="text-sm text-gray-400 mb-2"><i class="fas fa-search text-blue-400 mr-2"></i><strong>案例：影视信息检索</strong></p>
+                                    <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
+                                        <li><strong>时效性：</strong>能否搜到 24h 内的新片动态</li>
+                                        <li><strong>渠道覆盖度：</strong>是否涵盖 X/Twitter、豆瓣、抖音等多源数据</li>
+                                        <li><strong>抗幻觉能力：</strong>是否编造剧情或演员信息</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Q&A Section -->
+                        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="glass-card p-5 rounded-lg border-t-4 border-gray-600">
+                                <h4 class="font-bold text-white mb-2 text-sm">Q: 100-200 条数据够吗？</h4>
+                                <p class="text-gray-400 text-xs leading-relaxed">
+                                    这是“黄金集（Gold Set）”。大模型评测需人工精细打分，盲目扩充会降低质量。我们通过分层抽样（覆盖边缘 Case、高频场景、本土化场景），确保这 200 条数据能代表 80% 的线上实际情况。
+                                </p>
+                            </div>
+                            <div class="glass-card p-5 rounded-lg border-t-4 border-gray-600">
+                                <h4 class="font-bold text-white mb-2 text-sm">Q: 如何解决人工打分的主观性？</h4>
+                                <p class="text-gray-400 text-xs leading-relaxed">
+                                    制定详细的 Grading Rubric（评分量表）。例如在“对口型”场景，明确定义 1-5 分对应的“字符长度缩放比”范围，将主观判断转化为客观标准。
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 3. 评测方法论 -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <span class="w-1 h-8 bg-accent rounded-full"></span>
+                            评测方法论
+                        </h2>
+                        
+                        <!-- Image Placeholder for Methodology -->
+                        <div class="w-full h-48 bg-slate-800/50 rounded-xl border border-white/5 mb-8 overflow-hidden flex items-center justify-center relative group">
+                             <div class="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-cyan-900/20"></div>
+                             <img src="./1迁移评测能力.png" class="h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" alt="评测流程示意" onerror="this.style.display='none'">
+                             <div class="absolute bottom-2 right-4 text-xs text-gray-500">评测流程示意图</div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Step 1 -->
+                            <div class="glass-card p-5 rounded-xl">
+                                <div class="text-accent font-bold text-lg mb-2">01. 标准定义 (Standardization)</div>
+                                <div class="text-white font-medium mb-2">定义业务的“北极星指标”</div>
+                                <p class="text-gray-400 text-sm">通用榜单测“平均分”，我们测“业务及格线”。将业务需求拆解为技术指标，如“字符长度缩放比”。</p>
+                            </div>
+                            <!-- Step 2 -->
+                            <div class="glass-card p-5 rounded-xl">
+                                <div class="text-accent font-bold text-lg mb-2">02. 样本构建 (Sampling)</div>
+                                <div class="text-white font-medium mb-2">构建“黄金测试集”</div>
+                                <p class="text-gray-400 text-sm">采用“分层抽样法”，涵盖边缘场景、高频场景和本土化特有场景。</p>
+                            </div>
+                            <!-- Step 3 -->
+                            <div class="glass-card p-5 rounded-xl">
+                                <div class="text-accent font-bold text-lg mb-2">03. 多维打分 (Scoring)</div>
+                                <div class="text-white font-medium mb-2">LLM-as-a-Judge + 人工复核</div>
+                                <p class="text-gray-400 text-sm">建立多维坐标系：质量度（准确性、幻觉率）、工程性（延迟、成本）、合规性。</p>
+                            </div>
+                            <!-- Step 4 -->
+                            <div class="glass-card p-5 rounded-xl">
+                                <div class="text-accent font-bold text-lg mb-2">04. 决策选型 (Selection)</div>
+                                <div class="text-white font-medium mb-2">建立动态替换机制</div>
+                                <p class="text-gray-400 text-sm">建立 Baseline 对比机制。新模型需跑赢 10% 或成本大幅降低方可替换。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 4. 评测结论 -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <span class="w-1 h-8 bg-green-500 rounded-full"></span>
+                            评测结论：场景化最优解
+                        </h2>
+                        <p class="text-gray-400 mb-6">经过多维度实测，我们得出的结论并非“谁是第一”，而是<strong class="text-white">“不同业务场景下的最优选型组合”</strong>。</p>
+
+                        <div class="space-y-6">
+                            
+                            <!-- Scenario 1 -->
+                            <div class="glass-card rounded-xl overflow-hidden">
+                                <div class="bg-gradient-to-r from-slate-800 to-slate-900 p-4 border-b border-white/5 flex justify-between items-center">
+                                    <h3 class="font-bold text-white"><i class="fas fa-language text-green-400 mr-2"></i>AI 翻译场景</h3>
+                                    <span class="text-xs bg-slate-700 text-gray-300 px-2 py-1 rounded">稳定性 vs 灵活性</span>
+                                </div>
+                                <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="text-green-400 font-bold mb-1">Gemini (性能基座)</div>
+                                        <p class="text-gray-400 text-sm">在中译日、泰、葡等语种上，准确率与一致性表现最稳定，适合基础字幕翻译。</p>
+                                    </div>
+                                    <div>
+                                        <div class="text-blue-400 font-bold mb-1">DeepSeek (本土化专家)</div>
+                                        <p class="text-gray-400 text-sm">在口语化与本地化表达上有“神来之笔”，能精准理解中文隐喻，适合社交媒体宣发。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Scenario 2 -->
+                            <div class="glass-card rounded-xl overflow-hidden">
+                                <div class="bg-gradient-to-r from-slate-800 to-slate-900 p-4 border-b border-white/5 flex justify-between items-center">
+                                    <h3 class="font-bold text-white"><i class="fas fa-search text-green-400 mr-2"></i>资讯检索与舆情洞察</h3>
+                                    <span class="text-xs bg-slate-700 text-gray-300 px-2 py-1 rounded">实时性 vs 总结质量</span>
+                                </div>
+                                <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="text-white font-bold mb-1">Grok (全渠道情报员)</div>
+                                        <p class="text-gray-400 text-sm">时效性绝对优势。能有效调用 X、小红书、抖音接口，适合监控实时热点。</p>
+                                    </div>
+                                    <div>
+                                        <div class="text-green-400 font-bold mb-1">Gemini (深度摘要)</div>
+                                        <p class="text-gray-400 text-sm">逻辑总结与结构化呈现能力显著优于 Grok，适合海量碎片信息的深度报告生成。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Scenario 3 -->
+                            <div class="glass-card rounded-xl overflow-hidden">
+                                <div class="bg-gradient-to-r from-slate-800 to-slate-900 p-4 border-b border-white/5 flex justify-between items-center">
+                                    <h3 class="font-bold text-white"><i class="fas fa-eye text-green-400 mr-2"></i>视觉理解与文化适配</h3>
+                                    <span class="text-xs bg-slate-700 text-gray-300 px-2 py-1 rounded">文化壁垒</span>
+                                </div>
+                                <div class="p-6 space-y-4">
+                                    <div>
+                                        <div class="flex items-center gap-2 mb-1">
+                                            <span class="text-red-400 font-bold">海外模型 (Grok/Gemini)</span>
+                                            <span class="text-xs bg-red-500/10 text-red-400 px-1 rounded">存在偏见</span>
+                                        </div>
+                                        <p class="text-gray-400 text-sm">存在严重的文化偏见。常出现“常识性错误”（如将所有古装剧误认为《陈情令》）。</p>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2 mb-1">
+                                            <span class="text-green-400 font-bold">豆包 (本土化领先)</span>
+                                            <span class="text-xs bg-green-500/10 text-green-400 px-1 rounded">首选</span>
+                                        </div>
+                                        <p class="text-gray-400 text-sm">深度学习国内影视库，在本土文化识别、角色属性辨析上远超海外模型。</p>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2 mb-1">
+                                            <span class="text-gray-400 font-bold">DeepSeek</span>
+                                        </div>
+                                        <p class="text-gray-400 text-sm">评测周期内，多模态图片理解能力尚待完善，暂不建议投入视觉生产链条。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column: Meta Info & Navigation (4 cols) -->
+                <div class="lg:col-span-4 space-y-8">
+                    
+                    <!-- Info Card -->
+                    <div class="glass-card p-6 rounded-xl sticky top-24">
+                        <h3 class="text-lg font-bold text-white mb-4 border-b border-white/10 pb-2">关键信息</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Role</span>
+                                <span class="text-white font-medium">产品实习生 (Leader)</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Skills</span>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="px-2 py-1 bg-slate-700/50 border border-white/5 rounded text-xs text-gray-300">Prompt Engineering</span>
+                                    <span class="px-2 py-1 bg-slate-700/50 border border-white/5 rounded text-xs text-gray-300">Benchmark Design</span>
+                                    <span class="px-2 py-1 bg-slate-700/50 border border-white/5 rounded text-xs text-gray-300">Data Analysis</span>
+                                    <span class="px-2 py-1 bg-slate-700/50 border border-white/5 rounded text-xs text-gray-300">LLM Evaluation</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Tools</span>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="text-xs text-gray-400"><i class="fas fa-robot mr-1"></i>GPT-4</span>
+                                    <span class="text-xs text-gray-400"><i class="fas fa-code mr-1"></i>Python</span>
+                                    <span class="text-xs text-gray-400"><i class="fas fa-table mr-1"></i>Excel</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Highlights Image Placeholder -->
+                        <div class="mt-8 pt-6 border-t border-white/10">
+                            <h4 class="text-white font-bold text-sm mb-3">亮点展示</h4>
+                            <div class="w-full h-32 bg-slate-800 rounded-lg overflow-hidden group relative cursor-pointer">
+                                <img src="./2寻找模型亮点突破口.png" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all" alt="模型亮点" onerror="this.style.display='none'">
+                            </div>
+                        </div>
                     </div>
+
                 </div>
 
             </div>
@@ -177,5 +351,23 @@
         <p>&copy; 2026 Yao Xiaoyu. All rights reserved.</p>
     </footer>
 
+    <!-- Image Modal (Optional for future) -->
+    <div id="imageModal" class="fixed inset-0 bg-black/90 z-[100] hidden items-center justify-center p-4" onclick="this.classList.add('hidden')">
+        <img id="modalImage" src="" class="max-w-full max-h-full rounded-lg shadow-2xl" alt="Full size">
+    </div>
+
+    <script>
+        // Simple Image Modal Logic
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('click', (e) => {
+                const modal = document.getElementById('imageModal');
+                const modalImg = document.getElementById('modalImage');
+                modalImg.src = e.target.src;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                e.stopPropagation();
+            });
+        });
+    </script>
 </body>
 </html>

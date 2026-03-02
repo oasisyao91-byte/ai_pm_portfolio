@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>出海应用智能客服优化与产品迭代 | Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f97316', // Vibrant Orange
+                        secondary: '#3b82f6', // Bright Blue
+                        accent: '#22d3ee', // Cyan
+                        purple: '#a855f7', // Purple
+                        dark: '#0f172a', // Slate 900
+                        darker: '#020617', // Slate 950
+                        glass: 'rgba(15, 23, 42, 0.7)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        hand: ['Patrick Hand', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-darker selection:bg-blue-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html#projects" class="flex items-center gap-2 text-white hover:text-blue-400 transition-colors">
+                    <i class="fas fa-arrow-left"></i>
+                    <span class="font-bold">返回首页</span>
+                </a>
+                <span class="text-gray-400 text-sm font-mono">Project Details</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Header Section -->
+            <div class="mb-12">
+                <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                        <i class="fas fa-headset mr-1"></i> 智能客服
+                    </span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                        <i class="fas fa-sync-alt mr-1"></i> 产品迭代
+                    </span>
+                    <span class="text-gray-400">
+                        <i class="far fa-calendar-alt mr-1"></i> 2025.01 - 2025.02
+                    </span>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    出海应用智能客服优化与产品迭代
+                </h1>
+                <p class="text-xl text-gray-400 leading-relaxed border-l-4 border-blue-500 pl-6">
+                    针对 Google Play/App Store 用户反馈，重构客服响应逻辑，提升客诉解决率与订阅销售额。
+                </p>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <!-- Left Column: Details -->
+                <div class="md:col-span-2 space-y-12">
+                    
+                    <!-- Section: Background -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fas fa-info-circle text-blue-400"></i> 项目背景与目标
+                        </h2>
+                        <div class="glass-card p-6 rounded-xl border border-white/5">
+                            <p class="text-gray-300 leading-relaxed mb-4">
+                                产品在 Google Play、App Store 及 App 内客服渠道出现大量用户反馈，智能客服回复效果与产品使用体验存在差距。
+                            </p>
+                            <div class="flex items-start gap-3 bg-slate-800/50 p-4 rounded-lg border-l-2 border-blue-500">
+                                <i class="fas fa-bullseye text-blue-400 mt-1"></i>
+                                <div>
+                                    <strong class="text-white block mb-1">核心目标</strong>
+                                    <p class="text-sm text-gray-400">通过系统化客诉分析与智能助手优化，提升客服问题解决率，并反向驱动产品与商业化策略迭代。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Key Actions -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <i class="fas fa-tasks text-purple-400"></i> 核心策略与执行
+                        </h2>
+                        <div class="space-y-8">
+                            
+                            <!-- Action 1: VOC -->
+                            <div class="relative pl-6 border-l-2 border-slate-700">
+                                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-darker"></div>
+                                <h3 class="text-lg font-bold text-white mb-3">VOC 用户反馈分析</h3>
+                                <div class="glass-card p-5 rounded-lg">
+                                    <ul class="space-y-3 text-sm text-gray-300">
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-filter text-blue-400 mt-1"></i>
+                                            <span>建立多渠道反馈清洗机制，将周内 <strong>320+ 条反馈</strong>按“功能体验、订阅机制、隐私安全”等 8 个维度进行结构化归类。</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-search-plus text-blue-400 mt-1"></i>
+                                            <span><strong>痛点定位：</strong>订阅积分制度不透明、免费试用额度过低、个人数据隐私。</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Action 2: Smart CS -->
+                            <div class="relative pl-6 border-l-2 border-slate-700">
+                                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500 border-4 border-darker"></div>
+                                <h3 class="text-lg font-bold text-white mb-3">智能客服策略迭代</h3>
+                                <div class="glass-card p-5 rounded-lg space-y-4">
+                                    <div>
+                                        <h4 class="text-white font-bold text-sm mb-1">重构响应逻辑</h4>
+                                        <p class="text-xs text-gray-400">针对操作步骤类、订阅说明类高频问题（如功能使用路径），完善知识库，提供准确的步骤引导。</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-bold text-sm mb-1">System Prompt 调整</h4>
+                                        <p class="text-xs text-gray-400">将客服人设从“冷漠问答”转变为“销售引导型助手”。</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-bold text-sm mb-1">情绪安抚与转化</h4>
+                                        <p class="text-xs text-gray-400">对收费与订阅争议类问题增加情绪安抚与产品价值解释，避免机械式回复，软性植入产品亮点，引导付费转化。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action 3: Product Loop -->
+                            <div class="relative pl-6 border-l-2 border-slate-700">
+                                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-green-500 border-4 border-darker"></div>
+                                <h3 class="text-lg font-bold text-white mb-3">产品功能闭环迭代</h3>
+                                <div class="glass-card p-5 rounded-lg">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div class="bg-slate-800/50 p-3 rounded border border-white/5">
+                                            <div class="text-green-400 font-bold text-xs mb-1">隐私安全</div>
+                                            <p class="text-xs text-gray-400">新增“删除本地/云端个人数据”功能以增强信任感。</p>
+                                        </div>
+                                        <div class="bg-slate-800/50 p-3 rounded border border-white/5">
+                                            <div class="text-orange-400 font-bold text-xs mb-1">商业化优化</div>
+                                            <p class="text-xs text-gray-400">优化订阅页面信息展示与试用机制，降低用户决策门槛。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- Section: Results -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fas fa-chart-line text-green-400"></i> 项目成果
+                        </h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="glass-card p-6 rounded-xl border-t-4 border-green-500">
+                                <div class="flex items-end gap-2 mb-2">
+                                    <span class="text-4xl font-bold text-white">16.8%</span>
+                                    <i class="fas fa-arrow-up text-green-400 mb-2"></i>
+                                </div>
+                                <p class="text-sm text-gray-400">客诉解决率提升</p>
+                            </div>
+                            <div class="glass-card p-6 rounded-xl border-t-4 border-orange-500">
+                                <div class="flex items-end gap-2 mb-2">
+                                    <span class="text-4xl font-bold text-white">8.72%</span>
+                                    <i class="fas fa-arrow-up text-orange-400 mb-2"></i>
+                                </div>
+                                <p class="text-sm text-gray-400">周订阅销售额提升</p>
+                                <p class="text-xs text-gray-500 mt-1">客服优化联动产品迭代与销售活动</p>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Right Column: Meta Info -->
+                <div class="space-y-8">
+                    <div class="glass-card p-6 rounded-xl sticky top-24">
+                        <h3 class="text-lg font-bold text-white mb-4 border-b border-white/10 pb-2">关键信息</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Role</span>
+                                <span class="text-white font-medium">产品实习生</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Platform</span>
+                                <span class="text-white font-medium">Google Play / App Store</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Key Metrics</span>
+                                <div class="flex flex-col gap-1 mt-1">
+                                    <span class="text-green-400 text-sm font-bold">+16.8% Resolution Rate</span>
+                                    <span class="text-orange-400 text-sm font-bold">+8.72% Sales Revenue</span>
+                                </div>
+                            </div>
+                             <div>
+                                <span class="text-gray-500 text-xs uppercase tracking-wider block mb-1">Tags</span>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">VOC Analysis</span>
+                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">Prompt Engineering</span>
+                                    <span class="px-2 py-1 bg-slate-700 rounded text-xs text-gray-300">Growth</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-600 text-sm border-t border-white/5 mt-12">
+        <p>&copy; 2026 Yao Xiaoyu. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
